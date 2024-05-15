@@ -17,7 +17,7 @@
                 <!-- Dashboard Option -->
                 <div class="dropdown dashboard-option">
                     <a class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="false">
-                        <span class="name">My Account</span>
+                        <span class="name">{{ Auth::user()->name }}</span>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="{{ Request::is('dashboard') ? 'active' : false }}"><a href="/dashboard"> <i

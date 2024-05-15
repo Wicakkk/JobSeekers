@@ -26,7 +26,7 @@
                     <!-- Only for Mobile View -->
                     <li class="mm-add-listing">
 
-                        <a href="https://wa.me/6282118418130" target="_blank" class="theme-btn btn-style-one">Kirim
+                        <a href="{{ route('login') }}" target="_blank" class="theme-btn btn-style-one">Kirim
                             Pekerjaan</a>
 
                         <span>
@@ -53,16 +53,20 @@
         <div class="outer-box">
 
             <div class="btn-box">
-                @if (Request::is('/'))
-
-                <a href="https://wa.me/6282118418130" target="_blank" class="theme-btn btn-style-five">Kirim
-                    Pekerjaan</a>
-                @else
-                <a href="https://wa.me/6282118418130" target="_blank" class="heme-btn btn-style-three">Kirim
-                    Pekerjaan</a>
-
-                @endif
+                @auth <!-- Mengecek apakah pengguna sudah login -->
+                    @if (Request::is('/'))
+                        <a href="{{ route('dashboard') }}"><span class="user-name" style="color: white">{{ Auth::user()->name }}</span></a> <!-- Menampilkan nama pengguna -->
+                    @else
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="theme-btn btn-style-three">Logout</a> <!-- Menampilkan tombol logout -->
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endif
+                @else <!-- Jika pengguna belum login -->
+                    <a href="{{ route('login') }}" class="theme-btn btn-style-five">Login</a> <!-- Menampilkan tombol login -->
+                @endauth
             </div>
+
         </div>
     </div>
 </div>

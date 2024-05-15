@@ -54,8 +54,8 @@ Route::get('/job', [JobController::class, 'index']);
 Route::get('/company', [CompanyController::class, 'index']);
 Route::get('/company/{company:slug}', [CompanyController::class, 'show']);
 
-// Route::get('/register', [RegisterController::class])->name('register');
-// Route::get('/login', [LoginController::class])->name('login');
+Route::get('/register', [RegisterController::class])->name('register');
+Route::get('/login', [LoginController::class])->name('login');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -68,7 +68,7 @@ Route::middleware(['middleware' => 'auth'])->group(function () {
             'category' => Category::all(),
             'companycategory' => CompanyCategory::all(),
         ]);
-    });
+    })->name('dashboard');
 
     Route::resource('/dashboard/job', DashboardJobController::class);
     Route::get('/checkSlug', [DashboardJobController::class, 'checkSlug']);

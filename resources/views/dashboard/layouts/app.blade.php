@@ -61,7 +61,7 @@
         <!-- Copyright -->
         <div class="copyright-text">
             &copy;
-            <?php echo date('Y') ?> didamel.id All Right Reserved.
+            <?php echo date('Y') ?> Agoengg All Right Reserved.
         </div>
 
     </div><!-- End Page Wrapper -->
