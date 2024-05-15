@@ -13,7 +13,7 @@
           <div class="form-group col-lg-4 col-md-12 col-sm-12">
 
             <span class="icon flaticon-search-1"></span>
-            <input type="text" name="search" id="search" placeholder="Job title, keywords, or company">
+            <input type="text" name="search" id="search" placeholder="Judul Pekerjaan, Kata Kunci atau Perusahaan">
 
           </div>
 
@@ -23,7 +23,7 @@
 
           <div class="form-group col-lg-3 col-md-12 col-sm-12 location">
             <span class="icon flaticon-map-locator"></span>
-            <input type="text" name="location" placeholder="City or postcode">
+            <input type="text" name="location" placeholder="Kota atau Kodepos">
           </div>
 
 
@@ -33,7 +33,7 @@
           <div class="form-group col-lg-3 col-md-12 col-sm-12 category">
             <span class="icon flaticon-briefcase"></span>
             <select class="chosen-select" name="category">
-              <option selected disabled>Select Category</option>
+              <option selected disabled>Pilih Kategori</option>
               @foreach ($categories as $item)
               @if (old('category') == $item->slug)
               <option value="{{ $item->slug }}" selected>{{ $item->name }}</option>
@@ -47,7 +47,7 @@
 
           <!-- Form Group -->
           <div class="form-group col-lg-2 col-md-12 col-sm-12 text-right">
-            <button type="submit" class="theme-btn btn-style-one">Find Jobs</button>
+            <button type="submit" class="theme-btn btn-style-one">Cari Pekerjaan</button>
           </div>
         </div>
       </form>

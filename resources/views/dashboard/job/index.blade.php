@@ -5,7 +5,7 @@
 <section class="user-dashboard">
   <div class="dashboard-outer">
     <div class="upper-title-box">
-      <h3>Manage Jobs</h3>
+      <h3>Kelola Pekerjaan</h3>
       <div class="text">Ready to jump back in?</div>
       @if(session()->has('success'))
       <div class="alert alert-success" role="alert">
@@ -15,7 +15,7 @@
     </div>
     <!-- Input -->
     <div class="form-group col-12 mb-2">
-      <a href="{{ route('job.create') }}" class="theme-btn btn-style-three">Add Job</a>
+      <a href="{{ route('job.create') }}" class="theme-btn btn-style-three">Tambahkan Pekerjaan</a>
     </div>
     <div class="row">
       <div class="col-lg-12">
@@ -23,8 +23,7 @@
         <div class="ls-widget">
           <div class="tabs-box">
             <div class="widget-title">
-              <h4>My Job Listings</h4>
-
+              <h4>List Pekerjaan</h4>
               <!--search box-->
               <div class="search-box">
                 <form action="{{ route('job.index') }}">
@@ -43,10 +42,10 @@
               <table class="default-table manage-job-table">
                 <thead>
                   <tr>
-                    <th>Title</th>
-                    <th>Type</th>
-                    <th>Created & Expired</th>
-                    <th>Level Career</th>
+                    <th>Judul</th>
+                    <th>Tipe Pekerjaan</th>
+                    <th>Dibuat & Dibatas</th>
+                    <th>Level Karir</th>
                     <th>Action</th>
                   </tr>
                 </thead>

@@ -5,7 +5,7 @@
 <section class="user-dashboard">
     <div class="dashboard-outer">
         <div class="upper-title-box">
-            <h3>Manage Category Company</h3>
+            <h3>Kelola Kategori Perusahaan</h3>
             <div class="text">Ready to jump back in?</div>
             @if(session()->has('success'))
             <div class="alert alert-success" role="alert">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group col-lg-12 col-md-12 mb-2">
-            <a href="{{ route('companycategory.create') }}" class="theme-btn btn-style-three">Add Category</a>
+            <a href="{{ route('companycategory.create') }}" class="theme-btn btn-style-three">Tambahkan Kategori</a>
         </div>
 
         <div class="row">
@@ -24,7 +24,7 @@
                 <div class="ls-widget">
                     <div class="tabs-box">
                         <div class="widget-title">
-                            <h4>My Job Listings</h4>
+                            <h4>List Kategori Perusahaan</h4>
                         </div>
 
                         <div class="widget-content">
@@ -32,7 +32,7 @@
                                 <table class="default-table manage-job-table">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
+                                            <th>Nama</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>

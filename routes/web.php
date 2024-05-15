@@ -46,7 +46,7 @@ Route::get('/', function () {
         'jobs' => Jobs::with('category', 'company', 'author')->take(9)->latest()->get(),
         'companies' => Company::with(['companycategory', 'job'])->where('status', 1)->get(),
     ]);
-});
+})->name('home');
 Route::get('/job/{job:slug}', [JobController::class, 'show']);
 
 Route::get('/job', [JobController::class, 'index']);

@@ -26,8 +26,8 @@
                 <div class="row">
                   <!-- Input -->
                   <div class="form-group col-lg-12 col-md-12">
-                    <label>Job Title</label>
-                    <input type="text" name="title" id="title" placeholder="Title" value="{{ old('title') }}">
+                    <label>Judul Pekerjaan</label>
+                    <input type="text" name="title" id="title" placeholder="Nama Pekerjaan" value="{{ old('title') }}">
                     @error('title')
                     <div class="text-danger">
                       {{ $message }}
@@ -35,7 +35,7 @@
                     @enderror
                   </div>
                   <div class="form-group col-lg-12 col-md-12">
-                    <label>Job Slug</label>
+                    <label>Link Pekerjaan</label>
                     <input type="text" name="slug" id="slug" placeholder="Slug" value="{{ old('slug') }}">
                     @error('slug')
                     <div class="text-danger">
@@ -46,7 +46,7 @@
 
                   <!-- About Company -->
                   <div class="form-group col-lg-12 col-md-12">
-                    <label>Job Description</label>
+                    <label>Deskripsi Pekerjaan</label>
                     @error('body')
                     <p class="text-danger">{{ $message }}</p>
                     @enderror
@@ -57,13 +57,24 @@
                   <div class="form-group col-lg-12 col-md-12">
                     <img class="img-preview img-fluid mb-3 col-lg-5">
                   </div>
-                  <div class="form-group col-lg-6 col-md-12">
+                  {{-- <div class="form-group col-lg-6 col-md-12">
                     <label>Image</label>
                     <input type="file" id="image" name="image" class="form-control" onchange="previewImage()">
-                  </div>
+                  </div> --}}
                   <!-- Input -->
                   <div class="form-group col-lg-6 col-md-12">
-                    <label>Expiration Date</label>
+                    <label>Lokasi</label>
+                    <input type="text" name="location" placeholder="Location" value="{{ old('location') }}">
+                    @error('location')
+                    <div class="text-danger">
+                      {{ $message }}
+                    </div>
+                    @enderror
+                  </div>
+                  
+                  <!-- Input -->
+                  <div class="form-group col-lg-6 col-md-12">
+                    <label>Batas Tanggal</label>
                     <input type="date" name="expiration_date" placeholder="01/01/2022" class="form-control"
                       value="{{ old('expiration_date') }}">
                     @error('expiration_date')
@@ -73,27 +84,16 @@
                     @enderror
                   </div>
 
-                  <!-- Input -->
-                  <div class="form-group col-lg-6 col-md-12">
-                    <label>Location</label>
-                    <input type="text" name="location" placeholder="Location" value="{{ old('location') }}">
-                    @error('location')
-                    <div class="text-danger">
-                      {{ $message }}
-                    </div>
-                    @enderror
-                  </div>
-
                   {{-- company --}}
                   <div class="form-group col-lg-6 col-md-12">
-                    <label ">Company</label>
+                    <label ">Perusahaan</label>
                     @error('company_id')
                     <div class=" text-danger">
                       {{ $message }}
                   </div>
                   @enderror
                   <select class="chosen-select" name="company_id">
-                    <option selected disabled>select company</option>
+                    <option selected disabled>Pilih Perusahaan</option>
                     @foreach($companies as $company)
                     @if(old('company_id') == $company->id)
                     <option value="{{ $company->id }}" selected>{{ $company->name }}</option>
@@ -106,26 +106,23 @@
 
                 {{-- input --}}
                 <div class="form-group col-lg-6 col-md-12">
-                  <label>Level Career</label>
-                  <input type="text" name="level_career" placeholder="Senior" value="{{ old('level_career') }}">
+                  <label>Level Karir</label>
+                  <input type="text" name="level_career" placeholder="Junior, Medior, Senior" value="{{ old('level_career') }}">
                   @error('level_career')
                   <div class="text-danger">
                     {{ $message }}
-                  </div>
+                  </div>  
                   @enderror
                 </div>
-
-
-
                 <div class="form-group col-lg-6 col-md-12">
-                  <label>Job Type</label>
+                  <label>Tipe Pekerjaan</label>
                   <select class="chosen-select" name="type">
-                    <option selected disabled>select type job</option>
+                    <option selected disabled>Pilih Tipe Pekerjaan</option>
                     <option value="Fulltime" {{ old('type')=='Fulltime' ? 'selected' : '' }}>
                       Fulltime
                     </option>
                     <option value="Paruh waktu" {{ old('type')=='Paruh waktu' ? 'selected' : '' }}>
-                      Paruh waktu
+                      Part Time
                     </option>
                     <option value="Freelance" {{ old('type')=='Freelance' ? 'selected' : '' }}>
                       Freelance
@@ -140,8 +137,8 @@
 
                 <!-- Input -->
                 <div class="form-group col-lg-6 col-md-12">
-                  <label>Salary</label>
-                  <input type="text" name="salary" placeholder=" Rp5.000.000 - Rp10.000.000"
+                  <label>Gaji</label>
+                  <input type="text" name="salary" placeholder=" Rp x.xxx.xxx - Rp xx.xxx.xxx"
                     value="{{ old('salary') }}">
                   @error('salary')
                   <div class="text-danger">
@@ -152,9 +149,9 @@
 
                 {{-- input --}}
                 <div class="form-group col-lg-6 col-md-12">
-                  <label>Category</label>
+                  <label>Kategori Pekerjaan</label>
                   <select class="chosen-select" name="category_id">
-                    <option selected disabled>select category</option>
+                    <option selected disabled>Pilih Katagori</option>
                     @foreach($categories as $category)
                     @if(old('category_id') == $category->id)
                     <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
@@ -172,7 +169,7 @@
 
                 <!-- Input -->
                 <div class="form-group col-lg-12 col-md-12 text-right">
-                  <button class="theme-btn btn-style-one">Next</button>
+                  <button class="theme-btn btn-style-one">Uploud</button>
                 </div>
             </div>
             </form>

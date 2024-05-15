@@ -41,7 +41,7 @@
 
               <!-- Filter Block -->
               <div class="filter-block">
-                <h4>Location</h4>
+                <h4>Lokasi</h4>
                 <div class="form-group">
                   <input type="text" name="listing-search" name="location" placeholder="City or postcode">
                   <span class="icon flaticon-map-locator"></span>
@@ -57,7 +57,7 @@
 
               <!-- Filter Block -->
               <div class="filter-block">
-                <h4>Category</h4>
+                <h4>Kategori</h4>
                 <div class="form-group">
                   <select class="chosen-select" name="company-category">
                     <option hidden></option>
