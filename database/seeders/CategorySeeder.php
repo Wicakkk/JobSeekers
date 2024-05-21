@@ -16,37 +16,37 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'keuangan',
+            'name' => 'Keuangan',
             'slug' => 'keuangan',
             'icon' => 'flaticon-money-1'
         ]);
         Category::create([
-            'name' => 'multimedia',
+            'name' => 'Multimedia',
             'slug' => 'multimedia',
             'icon' => 'flaticon-vector'
         ]);
         Category::create([
-            'name' => 'teknologi informasi',
+            'name' => 'Teknologi Informasi',
             'slug' => 'teknologi-informasi',
             'icon' => 'flaticon-web-programming'
         ]);
         Category::create([
-            'name' => 'pemerintahan',
+            'name' => 'Pemerintahan',
             'slug' => 'pemerintahan',
             'icon' => 'flaticon-man'
         ]);
         Category::create([
-            'name' => 'kesehatan',
+            'name' => 'Kesehatan',
             'slug' => 'kesehatan',
             'icon' => 'flaticon-first-aid-kit'
         ]);
         Category::create([
-            'name' => 'otomotif',
+            'name' => 'Otomotif',
             'slug' => 'otomotif',
             'icon' => 'flaticon-car'
         ]);
         Category::create([
-            'name' => 'lainnya',
+            'name' => 'Lainnya',
             'slug' => 'lainnya',
         ]);
     }

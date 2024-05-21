@@ -20,15 +20,15 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->boolean('status')->default(false);
             $table->string('logo')->nullable();
-            $table->string('location');
-            $table->string('phone_number')->unique();
-            $table->string('email')->unique();
+            $table->string('location')->nullable();
+            $table->string('phone_number')->unique()->default("+62xxxxxxxxxxx");
+            $table->string('email')->default(false);
             $table->string('social_facebook')->unique()->nullable();
             $table->string('social_instagram')->unique()->nullable();
             $table->string('social_youtube')->unique()->nullable();
             $table->string('social_twitter')->unique()->nullable();
             $table->string('website')->unique()->nullable();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }

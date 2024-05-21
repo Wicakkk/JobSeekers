@@ -8,6 +8,18 @@
                 <h1 class="h3 mb-3 fw-normal text-center">Form Registration</h1>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
+                    <div class="mb-3">
+                        <select class="chosen-select" name="type">
+                            <option selected disabled>Pilih Tipe Register</option>
+                            <option value="Pencaker" {{ old('type')=='Pencaker' ? 'selected' : '' }}>Pencaker</option>
+                            <option value="Perusahaan" {{ old('type')=='Perusahaan' ? 'selected' : '' }}>Perusahaan</option>
+                        </select>
+                    @error('role')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                    </div>
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control rounded-top @error('name') is-invalid @enderror"
                             id="name" name="name" placeholder="Name" value="{{ old('name') }}" required autofocus>

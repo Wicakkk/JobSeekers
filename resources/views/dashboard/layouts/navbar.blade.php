@@ -6,12 +6,22 @@
             <!--Nav Outer -->
             <div class="nav-outer">
                 <div class="logo-box">
-                    <div class="logo"><a href="{{route('home')}}"><img src="{{ asset('images/logo-didamelid-2.png') }}" alt="" title=""></a></div>
-                </div>
+                    {{-- <div class="logo"><a href="{{route('home')}}"><img src="{{ asset('images/logo-didamelid-2.png') }}" alt="" title=""></a></div> --}}
+                </div>`
 
             </div>
 
             <div class="outer-box">
+                <nav class="nav main-menu">
+                    <ul class="navigation" id="navbar">
+                        <li class="">
+                            <a href="/">Beranda</a>
+                        </li>
+                        <li class="">
+                            <a href="/job">Lowongan Pekerjaan</a>
+                        </li>
+                    </ul>
+                </nav>
 
                 <!-- Dashboard Option -->
                 <div class="dropdown dashboard-option">

@@ -4,11 +4,11 @@
         <!--Nav Outer -->
         <div class="nav-outer d-flex justify-content-between align-items-center">
             <div class="logo-box">
-                @if(Request::is('/'))
+                {{-- @if(Request::is('/'))
                     <div class="logo"><a href="/"><img src="{{ asset('images/logo-didamelid-1.png') }}" alt="" title=""></a></div>
                 @else
                     <div class="logo"><a href="/"><img src="{{ asset('images/logo-didamelid-2.png') }}" alt="" title=""></a></div>
-                @endif
+                @endif --}}
             </div>
             <div class="outer-box ml-auto">
                 <nav class="nav main-menu">

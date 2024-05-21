@@ -17,14 +17,14 @@ class CompanyFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'companycategory_id' => rand(1, 4),
-            'slug' => $this->faker->slug(),
-            'status' => rand(0, 1),
-            'location' => $this->faker->city(),
-            'phone_number' => $this->faker->phoneNumber(),
-            'email' => $this->faker->email(),
-            'body' => $this->faker->paragraph(),
+            'name',
+            'companycategory_id',
+            'slug',
+            'status',
+            'location',
+            'phone_number',
+            'email',
+            'body',
         ];
     }
 }

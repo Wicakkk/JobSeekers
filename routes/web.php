@@ -54,11 +54,11 @@ Route::get('/job', [JobController::class, 'index']);
 Route::get('/company', [CompanyController::class, 'index']);
 Route::get('/company/{company:slug}', [CompanyController::class, 'show']);
 
-Route::get('/register', [RegisterController::class])->name('register');
-Route::get('/login', [LoginController::class])->name('login');
+Route::post('/register', [RegisterController::class, 'proses'])->name('register');
+Route::post('/login', [LoginController::class, 'proses'])->name('login');
 
-Route::get('/register', [RegisterController::class, 'index'])->name('register');
-Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index']);
 
 Route::middleware(['middleware' => 'auth'])->group(function () {
     Route::get('/dashboard', function () {

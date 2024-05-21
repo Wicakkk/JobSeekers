@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jobs;
 use App\Models\Company;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\CompanyCategory;
 use Artesaos\SEOTools\Facades\SEOTools;
@@ -29,6 +30,20 @@ class CompanyController extends Controller
     {
         return view('company.show', [
             'company' => $company->load(['companycategory', 'job']),
+        ]);
+    }
+
+    public function edit()
+    {
+        $user = Auth::user();
+        $company = Company::where('user_id', $user->id)->first(); // Sesuaikan query dengan struktur database Anda
+
+        if (!$company) {
+            return redirect()->route('company.index')->with('error', 'Company not found.');
+        }
+
+        return view('company.edit', [
+            'company' => $company,
         ]);
     }
 }

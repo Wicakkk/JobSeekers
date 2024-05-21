@@ -6,7 +6,6 @@
   <div class="dashboard-outer">
     <div class="upper-title-box">
       <h3>Kelola Pekerjaan</h3>
-      <div class="text">Ready to jump back in?</div>
       @if(session()->has('success'))
       <div class="alert alert-success" role="alert">
         {{ session('success') }}
@@ -44,9 +43,9 @@
                   <tr>
                     <th>Judul</th>
                     <th>Tipe Pekerjaan</th>
-                    <th>Dibuat & Dibatas</th>
+                    <th>Dibuat & Batas</th>
                     <th>Level Karir</th>
-                    <th>Action</th>
+                    <th>Aksi</th>
                   </tr>
                 </thead>
 

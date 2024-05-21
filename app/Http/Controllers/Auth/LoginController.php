@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -26,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/dashboard';
+    // protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -36,7 +38,20 @@ class LoginController extends Controller
     public function index()
     {
         $this->middleware('guest')->except('logout');
-        return view('auth/login');
+        return view('auth.login');
+    }
+
+    public function proses(Request $request){
+        $gentu = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        if(Auth::attempt($gentu)){
+            return redirect('/');
+        } else {
+            return redirect()->back();
+        }
     }
     // public function __construct()
     // {

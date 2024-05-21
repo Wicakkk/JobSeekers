@@ -23,7 +23,7 @@
 
                         <!-- Form Group -->
                         <div class="form-group col-auto">
-                            <button type="submit" class="theme-btn btn-style-two">Find Jobs</button>
+                            <button type="submit" class="theme-btn btn-style-two">Cari Pekerjaan</button>
                         </div>
                     </div>
                 </form>

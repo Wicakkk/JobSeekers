@@ -23,13 +23,14 @@ class DatabaseSeeder extends Seeder
             ->count(10)
             ->create();
 
-        // User::factory(3)->create();
-        \App\Models\User::factory()->create([
-            'name' => 'Fahmy Fauzi',
-            'email' => 'fahmyfauzii@gmail.com',
-            // 'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-        ]);
+        // // User::factory(3)->create();
+        // \App\Models\User::factory()->create([
+        //     'name' => 'admin',
+        //     'role' => 'admin',
+        //     'email' => 'admin@gmail.com',
+        //     // 'email_verified_at' => now(),
+        //     'password' => '123', // password
+        // ]);
         $this->call([
 
             // User::class,

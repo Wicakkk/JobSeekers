@@ -15,18 +15,18 @@ class JobsFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition()
-    {
+    {        
         return [
-            'user_id' => rand(1, 3),
-            'category_id' => rand(1, 6),
-            'title' => $this->faker->sentence(5),
-            'slug' => $this->faker->slug(),
-            'location' => $this->faker->city(),
-            'expiration_date' => $this->faker->date('Y-m-d'),
+            'user_id',
+            'category_id',
+            'title',
+            'slug',
+            'location',
+            'expiration_date',
             'level_career' => 'senior',
             'salary' => 'Rp10.000.000 - Rp13.000.000',
             'type' => 'Fulltime',
-            'body' => $this->faker->paragraph(),
+            'body',
         ];
     }
 }

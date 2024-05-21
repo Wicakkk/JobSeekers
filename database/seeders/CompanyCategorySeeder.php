@@ -16,24 +16,24 @@ class CompanyCategorySeeder extends Seeder
     public function run()
     {
         CompanyCategory::create([
-            'name' => 'perusahaan fashion',
+            'name' => 'Perusahaan Fashion',
             'slug' => 'perusahaan-fashion'
         ]);
         CompanyCategory::create([
-            'name' => 'perusahaan kesehatan',
+            'name' => 'Perusahaan Kesehatan',
             'slug' => 'perusahaan-kesehatan'
         ]);
         CompanyCategory::create([
-            'name' => 'perusahaan teknologi',
+            'name' => 'Perusahaan Teknologi',
             'slug' => 'perusahaan-teknologi'
 
         ]);
         CompanyCategory::create([
-            'name' => 'perusahaan distributor',
+            'name' => 'Perusahaan Distributor',
             'slug' => 'perusahaan-distributor'
         ]);
         CompanyCategory::create([
-            'name' => 'perusahaan lainnya',
+            'name' => 'Perusahaan Lainnya',
             'slug' => 'perusahaan-lainnya'
         ]);
     }
